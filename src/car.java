@@ -6,6 +6,7 @@ public class car
     private String model;
     private double price;
     private String colour;
+    public  int priceConfirm=0;
     car()
     {
 
@@ -29,23 +30,20 @@ public class car
 
     public void setPrice(double price)//变价
     {
-        int priceConfirm=0;
-        while(priceConfirm==0)
+
+        if(price<0)
         {
-            if(price<0)
-            {
-                System.out.println("数值必须大于0");
-            }
-            else if(price>100)
-            {
-                System.out.println("数值必须小于100");
-            }
-            else
-            {
-                System.out.println("改价成功");
-                this.price = price;
-                priceConfirm=1;
-            }
+            System.out.println("数值必须大于0");
+        }
+        else if(price>100)
+        {
+            System.out.println("数值必须小于100");
+        }
+        else
+        {
+            System.out.println("改价成功");
+            this.price = price;
+            priceConfirm=1;
         }
     }
 

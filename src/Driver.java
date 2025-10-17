@@ -10,7 +10,6 @@ public class Driver
     car car1;
     car car2;
 
-
     private void comparison()
     {
         if(car1.getPrice()>car2.getPrice())
@@ -27,6 +26,19 @@ public class Driver
         }
     }
 
+    private void inputPrice()
+    {
+        //int priceConfirm=0;
+        Scanner input = new Scanner(System.in);
+        car1.priceConfirm=0;
+        while(car1.priceConfirm==0)
+        {
+            car1.setPrice(input.nextDouble());
+        }
+    }
+
+
+
 
     Driver()//主函数
     {
@@ -42,7 +54,7 @@ public class Driver
         comparison();
 
         System.out.println("car1 改价：");
-        car1.setPrice(input.nextDouble());
+        inputPrice();
         comparison();
 
     }
